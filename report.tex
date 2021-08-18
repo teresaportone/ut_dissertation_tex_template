@@ -1,0 +1,48 @@
+\documentclass[12pt]{report}
+\usepackage{styleFile}
+
+\title{Snazzy Dissertation Title}
+\author{Your Name}
+\newcommand{\lastmonthofsemester}{Last Month Semester} 
+\newcommand{\theyear}{Year}
+\newcommand{\supervisor}{Your Advisor}
+
+\begin{document}
+
+% preamble stuff
+\pagenumbering{roman}
+\input{committee_membership.tex}
+\input{title_page.tex}
+\input{dedication.tex}
+\input{acknowledgments.tex}
+\input{abstract.tex}
+% I'm not sure where the glossary should go in page order since I didn't use it.
+%\input{glossary.tex} 
+
+% toc here
+\newpage
+\begin{singlespacing}
+\tableofcontents
+\end{singlespacing}
+\newpage
+\pagenumbering{arabic} 
+
+% begin main content; input whatever source files you want
+\input{introduction.tex}
+\input{conclusions.tex}
+
+\begin{appendices}
+\input{appendix.tex}
+\end{appendices}
+
+\singlespacing%
+\nocite{*}      % This command causes all items in the 		     %
+%                % bibliographic database to be added to 	     %
+%                % the bibliography, even if they are not 	     %
+%                % explicitly cited in the text. 		     %
+%\bibliographystyle{plain}  % Here the bibliography 		     %
+\bibliographystyle{unsrt}  % Here the bibliography 		     %
+\bibliography{references}
+
+\end{document}
+

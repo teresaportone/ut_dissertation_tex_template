@@ -1,0 +1,81 @@
+\usepackage{amssymb,array,graphicx,enumerate, esdiff} 
+\usepackage{booktabs}
+\usepackage{amsmath}
+%\usepackage{relsize}
+%\usepackage{verbatim}
+%\usepackage{float}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{xfrac}
+%\usepackage{layouts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Uncomment the following to enable review 
+% mode. \changebar{} will put a red bar along 
+% the margin of the text you enclose.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[mathlines]{lineno} % this package puts line numbers on the LHS of the text. good for editing.
+%\linenumbers
+\usepackage[xcolor]{changebar}
+\cbcolor{red}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hyperref settings 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  filecolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+% Cleveref has to be imported after hyperref... 
+\usepackage{cleveref}
+
+% Remove space in itemize
+\usepackage{enumitem}
+\setlist[itemize,1]{leftmargin=*,label=$\boldsymbol\cdot$,noitemsep,nolistsep}
+\setlist[itemize,2]{leftmargin=*,label=$\boldsymbol\cdot$,noitemsep,nolistsep}
+\setlist[itemize,3]{leftmargin=*,label=$\boldsymbol\cdot$,noitemsep,nolistsep}
+
+%%%%%%%%%%%%%% Dissertation style packages %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% includefoot below makes the bottom margin include the page numbers.
+\usepackage[margin=1 in, paperwidth=8.5in, paperheight=11.0in, includefoot]{geometry} 
+\usepackage{cite}
+% puts ``Chapter'' on the TOC labels
+\usepackage{tocloft}
+\renewcommand{\cftchappresnum}{Chapter }
+\renewcommand{\cftchapnumwidth}{6em}
+\renewcommand{\cftchapaftersnum}{.}
+% includes the bibliography in the TOC
+\usepackage[nottoc]{tocbibind}
+
+%spacing stuff
+\usepackage{setspace}
+%\singlespacing
+%\onehalfspacing
+\doublespacing
+
+\usepackage[]{appendix}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\centering\normalfont%
+   \large% %change this size to your needs for the first line
+   \bfseries}{\chaptertitlename\ \thechapter}{10pt}{%
+   \large %change this size to your needs for the second line
+}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+
+% Making it so appendix referencing and labels will be correct.
+\crefname{appendix}{Appendix}{Appendices}
+\let\oldappendices\appendices
+\def\appendices{\oldappendices
+  \crefalias{chapter}{appendix}
+  \addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\protect Appendix }}
+  \addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{\protect 7em}}
+}
+
+%%%%%%%%%%%%%% Place your commands here %%%%%%%%%%%%%%%%%%%%%%%%%%%
