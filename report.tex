@@ -16,8 +16,6 @@
 \input{dedication.tex}
 \input{acknowledgments.tex}
 \input{abstract.tex}
-% I'm not sure where the glossary should go in page order since I didn't use it.
-%\input{glossary.tex} 
 
 % toc here
 \newpage
@@ -25,10 +23,31 @@
 \tableofcontents
 \end{singlespacing}
 \newpage
+% Uncomment for list of figures/tables and glossary. 
+\listoftables
+\newpage
+\listoffigures 
+\newpage
+\input{glossary.tex} 
+\newpage
 \pagenumbering{arabic} 
+
 
 % begin main content; input whatever source files you want
 \input{introduction.tex}
+
+\begin{figure}[h]
+  \centering
+  \caption{A figure}
+  \label{fig:figure}
+\end{figure}
+
+\begin{table}
+  \centering
+  \caption{A table}
+  \label{tab:table}
+\end{table}
+
 \input{conclusions.tex}
 
 \begin{appendices}
